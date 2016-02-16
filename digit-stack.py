@@ -11,9 +11,9 @@ class Stack:
         except: return 0
 
     def peek(self):
-        print self.stack[-1]
-        return self.stack[-1]
-        
+        try: return self.stack[-1]
+        except: return 0
+
 
 def digit_stack(commands):
     s = Stack()
@@ -23,9 +23,9 @@ def digit_stack(commands):
         cmd_arg = cmd.split(' ')
         if len(cmd_arg) == 2:
             s.push(cmd_arg[1])
-        elif cmd is 'POP':
+        elif cmd == 'POP':
             sum += int(s.pop())
-        elif cmd is 'PEEK':
+        elif cmd == 'PEEK':
             sum += int(s.peek())
     print 'final : %d' % sum
     return sum
