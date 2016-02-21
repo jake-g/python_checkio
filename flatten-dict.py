@@ -11,6 +11,8 @@ def flatten(dictionary):
             else:
                 result["/".join((path + (k,)))] = v
     print result
+    if result == {}:
+        result = {"empty":""}
     return result
 
 
